@@ -3,12 +3,11 @@ import matplotlib.pyplot as plt
 from mnist import MNIST
 from sklearn.cluster import KMeans
 import os
-from display_network import *
 
 print(os.path.abspath("Lesson_5"))
-mndata = MNIST('/home/long/Code/MLcoban/Lesson_5/')
+mndata = MNIST('/home/long/Code/MLcoban/Lesson_5')
 
-#mndata.load_testing()
+mndata.load_testing()
 #X = mndata.test_images
 
 #kmeans = KMeans(n_clusters=10).fit(X)
