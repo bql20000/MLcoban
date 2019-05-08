@@ -2,10 +2,12 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 import matplotlib.pyplot as plt
 
+np.random.seed(2)
+
 #initalize data
 N = 1000
 x = np.random.rand(N)
-y = 4 + 3*x + 5*np.random.randn(N)
+y = 4 + 3*x + 2*np.random.randn(N)
 
 #visualize data
 #plt.plot(x, y, 'ro')
@@ -17,11 +19,13 @@ model.fit(x.reshape(N, 1), y.reshape(N, 1))
 
 w, b = model.coef_[0][0], model.intercept_[0]
 sol_sklearn = np.array([b, w])
-print(sol_sklearn)
+y_pred = model.predict(x.reshape(-1, 1))
+print(sol_sklearn, model.score(y_pred.reshape(-1, 1), y))
+
 
 
 #Gradient Descent
-eps = 1e-4
+eps = 1e-3
 def grad(w):
     return 1/N * X.dot(X_bar.dot(w) - y)
 

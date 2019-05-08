@@ -1,0 +1,1 @@
+ng/Code/MLcoban/Lesson_13/MNIST/train-labels.idx1-ubyte')
